@@ -1,0 +1,10 @@
+version: 2
+
+
+sources:
+  - name: stg_adventure_works
+    description: Sources that will compose the commercial area
+    schema: adventure_works
+    tables:
+      - name: sales_creditcard
+        description: teste
