@@ -8,3 +8,15 @@ sources:
     tables:
       - name: sales_creditcard
         description: teste
+
+      - name: sales_salesorderheader
+        description: teste
+      
+      - name: sales_salesorderheadersalesreason
+        description: test
+
+      - name: sales_salesreason
+        description: test
+
+      - name: sales_salesorderdetail
+        description: test

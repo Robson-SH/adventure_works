@@ -9,7 +9,7 @@ with
             , territoryid as territory_id 
             , creditcardid as credit_card_id
             , totaldue as total_due
-        from adventure_works.sales_salesorderheader
+        from {{ source('stg_adventure_works','sales_salesorderheader') }}
     )
 select *
 from sales_order_header

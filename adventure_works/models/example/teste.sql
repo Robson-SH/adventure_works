@@ -1,2 +1,0 @@
-select productid
-from adventure_works.production_product
