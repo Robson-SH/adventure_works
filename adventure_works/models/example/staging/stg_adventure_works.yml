@@ -11,6 +11,12 @@ sources:
 
       - name: sales_salesorderheader
         description: teste
+        columns:
+        - name: salesorderid
+          description: description
+          tests:
+            - unique
+            - not_null
       
       - name: sales_salesorderheadersalesreason
         description: test
@@ -19,4 +25,15 @@ sources:
         description: test
 
       - name: sales_salesorderdetail
+        description: test
+        columns:
+        - name: salesorderid
+          description: description
+          tests:
+            - not_null
+
+      - name: sales_customer
+        description: test
+
+      - name: sales_salesterritory
         description: test
