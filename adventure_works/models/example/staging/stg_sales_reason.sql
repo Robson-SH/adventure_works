@@ -1,7 +1,7 @@
 with 
     sales_reason as (
         select
-            CAST(salesreasonid as string) as sales_reason_id
+            cast(salesreasonid as string) as sales_reason_id
             , name as reason_name
             , reasontype as reason_type
         from {{ source('stg_adventure_works','sales_salesreason') }}

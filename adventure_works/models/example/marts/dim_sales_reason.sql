@@ -1,7 +1,8 @@
 with
     final as (
         select
-            sales_order_id
+            {{ dbt_utils.surrogate_key(['sales_order_id', 'sales_reason_id']) }} as sales_reason_sk
+            , sales_order_id
             , sales_reason_id
             , reason_name
             , reason_type

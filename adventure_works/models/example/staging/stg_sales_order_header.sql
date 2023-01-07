@@ -1,13 +1,13 @@
 with 
     sales_order_header as (
         select 
-            salesorderid as sales_order_id
+            cast(salesorderid as string) as sales_order_id
             , orderdate as order_date
             , status
-            , customerid as customer_id
-            , salespersonid as sales_person_id
-            , territoryid as territory_id 
-            , creditcardid as credit_card_id
+            , cast(customerid as string) as customer_id
+            , cast(salespersonid as string) as sales_person_id
+            , cast(territoryid as string) as territory_id 
+            , cast(creditcardid as string) as credit_card_id
             , totaldue as total_due
         from {{ source('stg_adventure_works','sales_salesorderheader') }}
     )

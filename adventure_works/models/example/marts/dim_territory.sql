@@ -1,7 +1,8 @@
 with
     final as (
         select
-             territory_id
+            {{ dbt_utils.surrogate_key(['territory_id']) }} as territory_sk
+            , territory_id
             , territory_name
             , country_region_code
             , salesytd

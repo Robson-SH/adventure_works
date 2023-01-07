@@ -1,9 +1,9 @@
 with
     customer as (
         select
-            CAST(customerid as string) as customer_id
-            , CAST(personid as string) as person_id
-            , CAST(storeid as string) as store_id
+            cast(customerid as string) as customer_id
+            , cast(personid as string) as person_id
+            , cast(storeid as string) as store_id
         from {{ source('stg_adventure_works', 'sales_customer') }}
     )
 select *

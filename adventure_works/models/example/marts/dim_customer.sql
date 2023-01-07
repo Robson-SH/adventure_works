@@ -1,10 +1,15 @@
 with
     final as (
         select
-            customer_id
+            {{ dbt_utils.surrogate_key(['customer_id']) }} as customer_sk
+            , customer_id
             , person_id
-            , store_id
-        from {{ ref('stg_customer') }}
+            , persontype
+            , first_name
+            , middle_name
+            , last_name
+            , full_name
+        from {{ ref('int_customer') }}
     )
 select *
 from final

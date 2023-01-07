@@ -1,0 +1,32 @@
+version: 2
+
+models:
+    - name: dim_territory
+      description: Dimension with the territory informations
+      columns:
+        - name: territory_sk
+          description: Territory table surrogate key.
+          tests:
+            - unique
+            - not_null
+
+        - name: territory_id
+          description: Territory table primary key.
+          tests:
+            - unique
+            - not_null
+
+        - name: territory_name
+          description: Sales territory description.
+
+        - name: country_region_code
+          description: Region code. 
+
+        - name: salesytd
+          description: Sales in the territory year to date.
+
+        - name: sales_last_year
+          description: Sales in the territory last year
+
+        - name: region_group
+          description: Geographic area to which the sales territory belong.

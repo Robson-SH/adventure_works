@@ -1,7 +1,7 @@
 with
     territory as (
         select
-            CAST(territoryid as string) as territory_id
+            cast(territoryid as string) as territory_id
             , name as territory_name
             , countryregioncode as country_region_code
             , salesytd
