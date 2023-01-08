@@ -59,3 +59,15 @@ sources:
 
       - name: person_person
         description: test
+
+      - name: person_businessentityaddress
+        description: test
+
+      - name: person_address
+        description: test
+
+      - name: person_stateprovince
+        description: test
+
+      - name: person_countryregion
+        description: test

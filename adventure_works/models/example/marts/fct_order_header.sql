@@ -17,7 +17,7 @@ with
     , dim_territory as (
         select
             territory_sk
-            , territory_id
+            , customer_id
         from {{ref('dim_territory')}}
     )
     , dim_credit_card as (
@@ -34,13 +34,12 @@ with
             , order_header.sales_order_id
             , order_header.order_date
             , order_header.customer_id
-            , order_header.territory_id 
             , order_header.credit_card_id
         from order_header
         left join dim_customer
             on dim_customer.customer_id = order_header.customer_id
         left join dim_territory
-            on dim_territory.territory_id = order_header.territory_id
+            on dim_territory.customer_id = order_header.customer_id
         left join dim_credit_card
             on dim_credit_card.credit_card_id = order_header.credit_card_id
     )

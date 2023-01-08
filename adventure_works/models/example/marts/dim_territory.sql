@@ -1,14 +1,16 @@
 with
     final as (
         select
-            {{ dbt_utils.surrogate_key(['territory_id']) }} as territory_sk
-            , territory_id
-            , territory_name
+            {{ dbt_utils.surrogate_key(['customer_id']) }} as territory_sk
+            , customer_id
+            , person_id
+            , address_id
+            , city
+            , state_province_id
             , country_region_code
-            , salesytd
-            , sales_last_year
-            , region_group
-        from {{ref('stg_territory')}}
+            , province_name 
+            , country_region_name
+        from {{ref('int_territory')}}
     )
 select *
 from final
