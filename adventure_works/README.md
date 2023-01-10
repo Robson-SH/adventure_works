@@ -1,8 +1,7 @@
-Welcome to your new dbt project!
-
-### Using the starter project
+## Running the project
 
 Try running the following commands:
+- dbt deps (This project contains quite a few packages, so you will probably need to run this command for it to work properly.)
 - dbt run
 - dbt test
 
