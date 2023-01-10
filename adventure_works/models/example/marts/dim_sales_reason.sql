@@ -6,6 +6,7 @@ with
             , sales_reason_id
             , reason_name
             , reason_type
+            , total_due
         from {{ref('int_sales_reason')}}
     )
 select *

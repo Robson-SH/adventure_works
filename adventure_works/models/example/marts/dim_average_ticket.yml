@@ -1,0 +1,17 @@
+version: 2
+
+models:
+    - name: dim_average_ticket
+      description: Dimension average ticket per product
+      columns:
+        - name: product_id
+          description: Product identification number 
+          tests:
+            - unique
+            - not_null
+
+        - name: average_ticket
+          description: The average ticket
+
+        - name: product_name
+          description: The product name

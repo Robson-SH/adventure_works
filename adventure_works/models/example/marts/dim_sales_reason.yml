@@ -23,3 +23,6 @@ models:
 
         - name: reason_type
           description: The type of reason for sale.
+
+        - name: total_due
+          description: Total due per sales reason

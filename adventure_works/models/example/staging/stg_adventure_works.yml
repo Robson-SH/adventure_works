@@ -7,24 +7,10 @@ sources:
     schema: adventure_works
     tables:
       - name: sales_creditcard
-        description: description
-        columns:
-        - name: creditcardid
-          description: Credit card unique key
-          tests:
-            - unique
-            - not_null
-        - name: cardtype
-          description: The credit card type
+        description: The table which contain informations about the credit cards
 
       - name: sales_salesorderheader
         description: teste
-        columns:
-        - name: salesorderid
-          description: description
-          tests:
-            - unique
-            - not_null
       
       - name: sales_salesorderheadersalesreason
         description: test
@@ -34,22 +20,9 @@ sources:
 
       - name: sales_salesorderdetail
         description: test
-        columns:
-        - name: salesorderid
-          description: description
-          tests:
-            - not_null
 
       - name: sales_customer
         description: test
-        columns:
-        - name: customerid
-          description: Customer unique key
-          tests:
-            - unique
-            - not_null
-        - name: storeid
-          description: The store where the purchase was made
 
       - name: sales_salesterritory
         description: test

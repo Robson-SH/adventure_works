@@ -6,6 +6,12 @@ with
         from {{ref('stg_customer')}}
         where person_id is not null
     )
+    , filter_customer as (
+        select distinct
+            customer_id
+            , person_id
+        from customer
+    )
     , business_entity_address_id as (
         select
             business_entity_id
@@ -34,12 +40,12 @@ with
     )
     , join_address_id as (
         select
-            customer.customer_id
-            , customer.person_id
+            filter_customer.customer_id
+            , filter_customer.person_id
             , business_entity_address_id.address_id
-        from customer
+        from filter_customer
         left join business_entity_address_id
-            on business_entity_address_id.business_entity_id = customer.person_id
+            on business_entity_address_id.business_entity_id = filter_customer.person_id
     )
     , join_address_name as (
         select 

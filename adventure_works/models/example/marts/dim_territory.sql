@@ -10,6 +10,10 @@ with
             , country_region_code
             , province_name 
             , country_region_name
+            , case 
+                when address_id is null then 'Endereço não cadastrado'
+                else concat(city, ', ',province_name, ', ', country_region_name)
+            end as full_address
         from {{ref('int_territory')}}
     )
 select *

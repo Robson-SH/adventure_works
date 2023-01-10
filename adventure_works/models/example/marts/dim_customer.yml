@@ -20,6 +20,7 @@ models:
           description: Foreign key to persons table (businessentityid)
           tests:
             - not_null
+            - unique
 
         - name: persontype
           description: Type of person -> SC = Store Contact; IN = Individual customer; SP = Sales Person; EM = Employee (non-sales); VC = Vendor Contact; GC = General Contact

@@ -10,23 +10,26 @@ models:
             - unique
             - not_null
 
-        - name: territory_id
-          description: Territory table primary key.
+        - name: customer_id
+          description: Territory table surrogate key.
           tests:
             - unique
             - not_null
 
-        - name: territory_name
-          description: Sales territory description.
+        - name: address_id
+          description: Address identification number
+
+        - name: city
+          description: City where the customer lives
 
         - name: country_region_code
           description: Region code. 
 
-        - name: salesytd
-          description: Sales in the territory year to date.
+        - name: country_region_name
+          description: The region name where the customer lives
 
-        - name: sales_last_year
-          description: Sales in the territory last year
-
-        - name: region_group
-          description: Geographic area to which the sales territory belong.
+        - name: state_province_id
+          description: State province identification number
+          
+        - name: province_name 
+          description: State province where the customer lives

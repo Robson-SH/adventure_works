@@ -6,6 +6,8 @@ with
             , customer_id
             , territory_id 
             , credit_card_id
+            , total_due
+            , status
         from {{ref('stg_sales_order_header')}}
     )
     , dim_customer as (
@@ -18,6 +20,7 @@ with
         select
             territory_sk
             , customer_id
+            , full_address
         from {{ref('dim_territory')}}
     )
     , dim_credit_card as (
@@ -26,7 +29,7 @@ with
             , credit_card_id
         from {{ref('dim_credit_card')}}
     )
-    , final as (
+    , join_data as (
         select
             dim_customer.customer_sk as customer_fk
             , dim_territory.territory_sk as territory_fk
@@ -35,6 +38,10 @@ with
             , order_header.order_date
             , order_header.customer_id
             , order_header.credit_card_id
+            , order_header.total_due
+            , order_header.status
+            , order_header.territory_id
+            , dim_territory.full_address
         from order_header
         left join dim_customer
             on dim_customer.customer_id = order_header.customer_id
@@ -43,5 +50,6 @@ with
         left join dim_credit_card
             on dim_credit_card.credit_card_id = order_header.credit_card_id
     )
+
 select *
-from final
+from join_data
