@@ -8,7 +8,7 @@ with
             , unit_price
         from {{ref('stg_sales_order_detail')}}
     )
-    , dim_products as (
+    , products as (
         select
             product_id
             , product_name
@@ -22,10 +22,10 @@ with
             , order_details.order_qty
             , order_details.unit_price
             , (order_details.order_qty*order_details.unit_price) as sub_total
-            , dim_products.product_name
+            , products.product_name
         from order_details
-        left join dim_products
-            on dim_products.product_id = order_details.product_id          
+        left join products
+            on products.product_id = order_details.product_id          
     )
     , average_ticket as (
         select

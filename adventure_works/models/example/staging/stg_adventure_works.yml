@@ -7,40 +7,37 @@ sources:
     schema: adventure_works
     tables:
       - name: sales_creditcard
-        description: The table which contain informations about the credit cards
+        description: The table which contain informations about the credit cards, like creditcardid and cardtype
 
       - name: sales_salesorderheader
-        description: teste
+        description: The order header table, each line represent one group of information about a sales order, like the customer associated with the order, the total due, etc.
       
       - name: sales_salesorderheadersalesreason
-        description: test
+        description: Table which contain the conection between sales order header and the sales reason table.
 
       - name: sales_salesreason
-        description: test
+        description: The table which contains the sales reason.
 
       - name: sales_salesorderdetail
-        description: test
+        description: Table with the details about each order, like which products contains, the quantity, unit price, etc.
 
       - name: sales_customer
-        description: test
-
-      - name: sales_salesterritory
-        description: test
+        description: Table with the customer id and the person id (businessentityid), that associates the customer with other information about the customer.
 
       - name: production_product
-        description: test
+        description: Table with the products identification number and informations.
 
       - name: person_person
-        description: test
+        description: Table with the person identification number, full name and person type
 
       - name: person_businessentityaddress
-        description: test
+        description: Table linking the person to their respective address
 
       - name: person_address
-        description: test
+        description: Table with the address, city and state province identification number.
 
       - name: person_stateprovince
-        description: test
+        description: Person state province, linking with the state province identification number in the person_address table.
 
       - name: person_countryregion
-        description: test
+        description: Person country region, linking with the country region code in the person_stateprovince table

@@ -1,7 +1,8 @@
 with
     sales_reason as (
-        select    
-            sales_order_id
+        select
+            sales_reason_sk    
+            , sales_order_id
             , sales_reason_id
             , reason_name
             , reason_type
@@ -17,7 +18,8 @@ with
     )
     , join_data as (
         select
-            sales_reason.sales_order_id
+            sales_reason.sales_reason_sk as sales_reason_fk
+            , sales_reason.sales_order_id
             , sales_reason.sales_reason_id
             , sales_reason.reason_name
             , sales_reason.reason_type
